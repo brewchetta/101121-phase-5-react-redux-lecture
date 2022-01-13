@@ -6,7 +6,7 @@ function Header({currentUser, setCurrentUser}) {
   return (
     <div id="header">
 
-      <h1>Welcome to Flatalistr!</h1>
+      <h1>Welcome to Flatalistr REDUX!</h1>
 
       <HeaderUserDisplay currentUser={currentUser} setCurrentUser={setCurrentUser} />
 
