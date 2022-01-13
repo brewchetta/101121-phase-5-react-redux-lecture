@@ -1,12 +1,18 @@
 import React, { useState } from 'react'
+import { useDispatch } from 'react-redux'
+import { addUser } from '../../redux/actions'
 
-function HeaderUserSignIn({setCurrentUser}) {
+function HeaderUserSignIn() {
 
   const [fieldInput, setFieldInput] = useState('')
 
+  const dispatch = useDispatch()
+
+  // dispatch --> set state
+
   const handleSubmit = e => {
     e.preventDefault()
-    setCurrentUser({name: fieldInput})
+    dispatch(addUser({name: fieldInput}))
   }
 
   return (

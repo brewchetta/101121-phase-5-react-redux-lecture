@@ -1,17 +1,28 @@
 import React, { useState } from 'react'
 import { v4 as uuid } from 'uuid'
+import { useDispatch } from 'react-redux'
 
-function ListAddForm({setList}) {
+function ListAddForm() {
 
   const [input, setInput] = useState('')
+  const dispatch = useDispatch()
 
   const handleSubmit = e => {
     e.preventDefault()
 
-    setList(prevList => [
-      ...prevList,
-      {id: uuid(), content: input}
-    ])
+    dispatch({
+      type: "addListItem",
+      payload: {
+        id: uuid(),
+        content: input
+      }
+    })
+
+    // dispatch({type: payload: input})
+    // setList(prevList => [
+    //   ...prevList,
+    //   {id: uuid(), content: input}
+    // ])
 
     setInput('')
   }

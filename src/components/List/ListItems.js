@@ -1,7 +1,10 @@
 import React from 'react'
 import ListCard from "./ListCard"
+import { useSelector } from 'react-redux'
 
-function ListContainer({list}) {
+function ListContainer() {
+
+  const list = useSelector(state => state.list)
 
   return (
     <>

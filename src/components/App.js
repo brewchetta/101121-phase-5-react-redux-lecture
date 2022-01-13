@@ -1,20 +1,17 @@
-import React, { useState } from 'react'
+import React from 'react'
 import Header from "./Header"
 import ListContainer from "./List"
 
 function App() {
 
-  const [currentUser, setCurrentUser] = useState(null)
-  const [list, setList] = useState([])
-
   return (
     <div className="App">
 
-      <Header currentUser={currentUser} setCurrentUser={setCurrentUser} />
+      <Header />
 
       <br/>
 
-      <ListContainer setList={setList} currentUser={currentUser} list={list} />
+      <ListContainer />
 
     </div>
   );

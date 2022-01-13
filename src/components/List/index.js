@@ -1,15 +1,20 @@
 import React from 'react'
 import ListItems from "./ListItems"
 import ListAddForm from "./ListAddForm"
+import { useSelector } from 'react-redux'
 
-function ListContainer({currentUser, list, setList}) {
+function ListContainer() {
+
+  const currentUser = useSelector(state => state.user)
+
+  // useSelector --> get state
 
   return (
     <div id="list-container">
 
-      {currentUser ? <ListItems list={list} setList={setList} /> : <p>Sign in to see the list!</p>}
+      {currentUser ? <ListItems  /> : <p>Sign in to see the list!</p>}
 
-      {currentUser ? <ListAddForm setList={setList} /> : null}
+      {currentUser ? <ListAddForm /> : null}
 
     </div>
   )
